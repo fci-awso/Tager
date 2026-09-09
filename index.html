@@ -56,7 +56,7 @@
 
         .header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .logo-badge {
@@ -93,13 +93,37 @@
             font-size: 1.05rem;
             color: var(--ink-soft);
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* زر عرض المميزات */
+        .btn-features {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            border: none;
+            padding: .9rem 1.8rem;
+            border-radius: 16px;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(59,130,246,.25);
+            transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+            font-family: inherit;
+        }
+
+        .btn-features:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 30px rgba(59,130,246,.35);
         }
 
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
+            align-items: stretch; /* لضمان تساوي ارتفاع البطاقات */
         }
 
         .demo-card {
@@ -116,6 +140,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            height: 100%; /* لضمان ملء ارتفاع الشبكة */
             animation: fadeInUp .6s var(--ease) both;
         }
 
@@ -144,14 +169,14 @@
         .demo-card h3 {
             font-size: 1.2rem;
             font-weight: 800;
-            margin-bottom: .4rem;
-        }
-
-        .demo-card p {
-            font-size: .85rem;
-            color: var(--ink-soft);
-            margin-bottom: 1.2rem;
-            flex: 1;
+            margin-bottom: 1.5rem;
+            /* التعديل: تحديد ارتفاع ثابت وتمركز المحتوى لضمان تساوي الأزرار */
+            min-height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.4;
         }
 
         .btn-demo {
@@ -166,6 +191,7 @@
             color: var(--primary-deep);
             text-decoration: none;
             transition: background .2s, color .2s;
+            margin-top: auto; /* لدفع الزر إلى الأسفل إذا كانت البطاقة طويلة */
         }
 
         .demo-card:hover .btn-demo {
@@ -205,6 +231,141 @@
             font-size: .85rem;
         }
 
+        /* المودال */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .25s var(--ease), visibility 0s linear .25s;
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity .25s var(--ease);
+        }
+
+        .modal {
+            background: var(--surface);
+            border-radius: 24px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 30px 60px rgba(0,0,0,.2);
+            transform: scale(.95) translateY(20px);
+            transition: transform .3s var(--ease);
+        }
+
+        .modal-overlay.open .modal {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 1.5rem;
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            background: var(--surface);
+            z-index: 2;
+            border-radius: 24px 24px 0 0;
+        }
+
+        .modal-header h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .modal-close {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary-soft);
+            color: var(--primary-deep);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background .2s;
+        }
+
+        .modal-close:hover {
+            background: #dbeafe;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+        }
+
+        .feature-section {
+            margin-bottom: 1.8rem;
+        }
+
+        .feature-section h3 {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--primary-deep);
+            margin-bottom: .8rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--primary-soft);
+            padding: .7rem 1rem;
+            border-radius: 12px;
+        }
+
+        .feature-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-section ul li {
+            padding: .4rem 0;
+            font-size: .88rem;
+            color: var(--ink-soft);
+            display: flex;
+            align-items: flex-start;
+            gap: .5rem;
+        }
+
+        .feature-section ul li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--positive);
+            font-size: .8rem;
+            margin-top: .2rem;
+        }
+
+        .highlight-box {
+            background: var(--positive-soft);
+            border-radius: 14px;
+            padding: 1.2rem 1.5rem;
+            margin-top: 1rem;
+            font-size: .9rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box strong {
+            color: var(--positive);
+        }
+
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -213,6 +374,9 @@
         @media (max-width: 600px) {
             .header h1 { font-size: 1.6rem; }
             .cards-grid { grid-template-columns: 1fr; }
+            .modal { border-radius: 16px; }
+            .modal-header h2 { font-size: 1.1rem; }
+            .feature-section h3 { font-size: .95rem; }
         }
     </style>
 </head>
@@ -226,41 +390,40 @@
                 اختر الديمو المناسب لنشاطك
             </h1>
             <p>استعرض النسخة التجريبية الأقرب لطبيعة عملك، وجرّب المزايا المصممة خصيصًا لكل قطاع.</p>
+            <button class="btn-features" id="featuresBtn">
+                <i class="fa-solid fa-star"></i>
+                عرض مميزات وتفاصيل البرنامج
+            </button>
         </header>
 
         <div class="cards-grid" id="demoCards">
             <div class="demo-card supermarket" data-link="https://tagersupermarket-001-site1.gtempurl.com/" style="animation-delay:.05s">
                 <div class="icon-wrap"><i class="fa-solid fa-basket-shopping"></i></div>
                 <h3>سوبرماركت</h3>
-                <p>إدارة كاملة للمواد الغذائية، تتبع المخزون، ونقاط بيع سريعة.</p>
                 <a href="https://tagersupermarket-001-site1.gtempurl.com/" class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
             </div>
 
             <div class="demo-card restaurant" data-link="https://tagerrestaurants-001-site1.gtempurl.com/" style="animation-delay:.1s">
                 <div class="icon-wrap"><i class="fa-solid fa-utensils"></i></div>
                 <h3>مطاعم</h3>
-                <p>إدارة الطلبات، قوائم الطعام، والخدمة السريعة للعملاء.</p>
                 <a href="https://tagerrestaurants-001-site1.gtempurl.com/" class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
             </div>
 
             <div class="demo-card mobile" data-link="https://tagercomputers-001-site1.itempurl.com/" style="animation-delay:.15s">
                 <div class="icon-wrap"><i class="fa-solid fa-mobile-screen"></i></div>
                 <h3>محل موبايلات وكمبيوترات</h3>
-                <p>تتبع الأجهزة، ملحقاتها، وخدمات الصيانة والضمان.</p>
                 <a href="https://tagercomputers-001-site1.itempurl.com/" class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
             </div>
 
             <div class="demo-card electronics" data-link="https://tagerelectricals-001-site1.etempurl.com/" style="animation-delay:.2s">
                 <div class="icon-wrap"><i class="fa-solid fa-plug"></i></div>
                 <h3>أجهزة كهربائية</h3>
-                <p>إدارة الأجهزة المنزلية، الضمانات، والتقسيط.</p>
                 <a href="https://tagerelectricals-001-site1.etempurl.com/" class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
             </div>
 
             <div class="demo-card clothing" data-link="https://tagerclothes-001-site1.jtempurl.com/" style="animation-delay:.25s">
                 <div class="icon-wrap"><i class="fa-solid fa-shirt"></i></div>
                 <h3>محل ملابس</h3>
-                <p>إدارة المقاسات، الألوان، والمواسم المختلفة.</p>
                 <a href="https://tagerclothes-001-site1.jtempurl.com/" class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
             </div>
         </div>
@@ -268,6 +431,196 @@
         <footer class="footer">
             © <span id="currentYear"></span> نظام تاجر - جميع الحقوق محفوظة
         </footer>
+    </div>
+
+    <!-- مودال المميزات -->
+    <div class="modal-overlay" id="featuresModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-star" style="color:var(--primary)"></i> نظام Tager — نظام متكامل لإدارة النشاط التجاري</h2>
+                <button class="modal-close" id="closeModalBtn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="feature-section">
+                    <h3><i class="fa-solid fa-cart-shopping"></i> أولًا: إدارة المبيعات والمشتريات</h3>
+                    <ul>
+                        <li>إنشاء وإدارة فواتير المبيعات والمشتريات بسهولة.</li>
+                        <li>إدارة دورة البيع والشراء بالكامل.</li>
+                        <li>متابعة حالة الفواتير: مدفوعة، غير مدفوعة، أو مدفوعة جزئيًا.</li>
+                        <li>إدارة الأقساط والمبالغ المستحقة من العملاء والموردين.</li>
+                        <li>تسجيل ومتابعة عمليات السداد والمدفوعات.</li>
+                        <li>إدارة بيانات المنتجات والعملاء والموردين.</li>
+                        <li>البحث السريع عن المنتجات والفواتير والعملاء.</li>
+                        <li>الاحتفاظ بسجل كامل للعمليات وإمكانية الرجوع إليها ومراجعتها في أي وقت.</li>
+                        <li>متابعة المستخدم الذي قام بتنفيذ العمليات المختلفة.</li>
+                        <li>عرض تفاصيل الفواتير والمنتجات والكميات والأسعار والإجماليات بشكل واضح.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-section">
+                    <h3><i class="fa-solid fa-boxes-stacked"></i> ثانيًا: إدارة المنتجات والمخزون</h3>
+                    <ul>
+                        <li>إدارة بيانات المنتجات والأقسام.</li>
+                        <li>تسجيل الباركود والبحث السريع عن المنتجات.</li>
+                        <li>متابعة الكميات المتاحة في المخزون.</li>
+                        <li>تحديث المخزون تلقائيًا مع عمليات البيع والشراء.</li>
+                        <li>تحديد الحد الأدنى للمخزون لكل منتج.</li>
+                        <li>تنبيهات عند اقتراب المنتجات من النفاد.</li>
+                        <li>معرفة حركة كل منتج والعمليات المرتبطة به.</li>
+                        <li>متابعة الكميات الداخلة والخارجة من المخزون.</li>
+                        <li>تقليل الأخطاء الناتجة عن الإدخال اليدوي.</li>
+                        <li>تحسين دقة متابعة المخزون واتخاذ قرارات إعادة الشراء.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-section">
+                    <h3><i class="fa-solid fa-chart-line"></i> ثالثًا: تقارير المنتجات وتحليل أداء المنتجات</h3>
+                    <ul>
+                        <li>عرض جميع بيانات المنتج الأساسية، مثل الاسم والباركود والقسم والأسعار والكمية الحالية.</li>
+                        <li>معرفة إجمالي الكميات التي تم شراؤها وبيعها خلال فترة زمنية محددة.</li>
+                        <li>تحليل إجمالي مبيعات المنتج والإيرادات الناتجة عنه.</li>
+                        <li>معرفة تكلفة المنتجات المباعة والأرباح الناتجة عنها.</li>
+                        <li>حساب وتحليل هامش الربح.</li>
+                        <li>معرفة متوسط سعر الشراء ومتوسط سعر البيع.</li>
+                        <li>متابعة آخر سعر شراء وآخر سعر بيع.</li>
+                        <li>متابعة تغير أسعار المنتج عبر الفترات المختلفة.</li>
+                        <li>عرض سجل حركة المنتج والعمليات المرتبطة به.</li>
+                        <li>تحليل عمليات شراء المنتج والموردين الذين تم الشراء منهم.</li>
+                        <li>معرفة الكميات والتكلفة ومتوسط أسعار الشراء حسب المورد.</li>
+                        <li>تحليل العملاء الذين قاموا بشراء المنتج.</li>
+                        <li>معرفة الكميات المباعة وقيمة المبيعات حسب العملاء.</li>
+                        <li>تحليل معدل بيع المنتج ومتوسط المبيعات اليومية.</li>
+                        <li>معرفة المنتجات سريعة الحركة وضعيفة الحركة.</li>
+                        <li>اكتشاف المنتجات التي لم تحقق مبيعات خلال فترة معينة.</li>
+                        <li>متابعة المنتجات التي تقترب من الحد الأدنى للمخزون.</li>
+                        <li>تقدير مدى كفاية المخزون مقارنة بمعدل البيع.</li>
+                        <li>عرض رسوم بيانية توضح تطور المبيعات والمشتريات والأرباح وحركة المخزون والأسعار.</li>
+                        <li>تحديد فترة زمنية مخصصة لتحليل أداء المنتج.</li>
+                        <li>مقارنة عدة منتجات في تقرير واحد من حيث المبيعات والكميات والأرباح وهامش الربح والأسعار والمخزون.</li>
+                        <li>تحديد المنتجات الأعلى مبيعًا والأعلى تحقيقًا للأرباح بناءً على البيانات الفعلية.</li>
+                    </ul>
+                    <p style="font-size:.85rem;color:var(--ink-soft);margin-top:.5rem">وبذلك لا يكتفي صاحب النشاط بمعرفة ما الموجود في المخزن، بل يستطيع معرفة ما الذي يبيع، وما الذي يحقق الربح، وما الذي يتحرك ببطء، ومتى يحتاج إلى إعادة الشراء.</p>
+                </div>
+
+                <div class="feature-section">
+                    <h3><i class="fa-solid fa-coins"></i> رابعًا: إدارة المصروفات</h3>
+                    <ul>
+                        <li>تسجيل المصروفات وتفاصيلها.</li>
+                        <li>تصنيف المصروفات حسب النوع.</li>
+                        <li>متابعة المصروفات خلال فترات زمنية مختلفة.</li>
+                        <li>الرجوع إلى سجل المصروفات في أي وقت.</li>
+                        <li>ربط بيانات المصروفات بالتقارير والحسابات.</li>
+                        <li>المساعدة على متابعة تكاليف تشغيل النشاط.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-section">
+                    <h3><i class="fa-solid fa-users"></i> خامسًا: إدارة الموظفين وشؤون العاملين</h3>
+                    <ul>
+                        <li>إدارة بيانات الموظفين.</li>
+                        <li>تسجيل الحضور والانصراف.</li>
+                        <li>إدارة الإجازات.</li>
+                        <li>صرف المرتبات.</li>
+                        <li>إدارة الحوافز والمكافآت.</li>
+                        <li>إدارة الجزاءات والخصومات.</li>
+                        <li>متابعة مستحقات الموظفين.</li>
+                        <li>تسجيل ومتابعة العمليات الخاصة بالموظفين.</li>
+                        <li>توفير تقارير خاصة بالموظفين والعمليات المتعلقة بهم.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-section">
+                    <h3><i class="fa-solid fa-briefcase"></i> سادسًا: إدارة الخزينة</h3>
+                    <ul>
+                        <li>قيمة الخزينة الحالية.</li>
+                        <li>قيمة الخزينة بالأمس.</li>
+                        <li>حركة الخزينة خلال الأسبوع.</li>
+                        <li>حركة الخزينة خلال الشهر.</li>
+                        <li>حركة الخزينة خلال فترة زمنية يحددها المستخدم.</li>
+                        <li>تفاصيل العمليات التي أثرت على رصيد الخزينة.</li>
+                        <li>معرفة مصادر الأموال وأسباب دخولها.</li>
+                        <li>معرفة أوجه الصرف والعمليات التي أدت إلى خروج الأموال.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-section">
+                    <h3><i class="fa-solid fa-chart-pie"></i> سابعًا: الأرباح والخسائر ورأس المال</h3>
+                    <ul>
+                        <li>إجمالي المبيعات.</li>
+                        <li>إجمالي المشتريات.</li>
+                        <li>إجمالي الأرباح.</li>
+                        <li>المصروفات.</li>
+                        <li>المبالغ المستحقة.</li>
+                        <li>متابعة رأس المال.</li>
+                        <li>تحليل الحركة المالية خلال فترات زمنية مختلفة.</li>
+                        <li>متابعة التغيرات المالية ومقارنتها بين الفترات.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-section">
+                    <h3><i class="fa-solid fa-gauge-high"></i> ثامنًا: لوحة التحكم Dashboard</h3>
+                    <ul>
+                        <li>إجمالي المبيعات.</li>
+                        <li>إجمالي المشتريات.</li>
+                        <li>إجمالي الأرباح.</li>
+                        <li>الأقساط والمبالغ المستحقة من العملاء والموردين.</li>
+                        <li>حالة المخزون.</li>
+                        <li>عدد المنتجات.</li>
+                        <li>عدد العملاء.</li>
+                        <li>عدد الموردين.</li>
+                        <li>عدد الموظفين.</li>
+                        <li>عدد الأقسام.</li>
+                        <li>أفضل المنتجات مبيعًا.</li>
+                        <li>أهم الإحصائيات والمؤشرات.</li>
+                        <li>رسوم بيانية توضح أداء النشاط.</li>
+                    </ul>
+                    <p style="font-size:.85rem;color:var(--ink-soft);margin-top:.5rem">كما يمكن تحليل البيانات حسب: اليوم، الأسبوع، الشهر، السنة، فترة زمنية مخصصة يحددها المستخدم.</p>
+                </div>
+
+                <div class="feature-section">
+                    <h3><i class="fa-solid fa-user-check"></i> تاسعًا: تقارير الموظفين ومتابعة الأداء</h3>
+                    <ul>
+                        <li>مبيعات اليوم.</li>
+                        <li>المبيعات الشهرية.</li>
+                        <li>المبيعات السنوية.</li>
+                        <li>إجمالي المبيعات خلال فترة زمنية محددة.</li>
+                        <li>متابعة المبيعات والأداء حسب الفترة المطلوبة.</li>
+                        <li>مراجعة العمليات التي قام الموظف بتنفيذها.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-section">
+                    <h3><i class="fa-solid fa-shield-halved"></i> عاشرًا: نظام الصلاحيات وحماية البيانات</h3>
+                    <ul>
+                        <li>الفصل بين صلاحيات المدير والموظفين.</li>
+                        <li>تحديد الصفحات والوظائف التي يمكن لكل مستخدم الوصول إليها.</li>
+                        <li>حماية البيانات والعمليات الحساسة.</li>
+                        <li>تنظيم مستوى الوصول داخل النظام.</li>
+                        <li>منع المستخدمين من الوصول إلى الوظائف غير المصرح لهم بها.</li>
+                    </ul>
+                </div>
+
+                <div class="feature-section">
+                    <h3><i class="fa-solid fa-file-export"></i> الحادي عشر: التقارير والتصدير</h3>
+                    <ul>
+                        <li>استخراج التقارير بصيغة PDF.</li>
+                        <li>تقارير المبيعات والمشتريات.</li>
+                        <li>تقارير المنتجات والمخزون.</li>
+                        <li>تقارير الموظفين.</li>
+                        <li>التقارير المالية.</li>
+                        <li>تقارير حركة المنتجات.</li>
+                        <li>تقارير وتحليلات المنتجات.</li>
+                        <li>تقارير المقارنة بين المنتجات.</li>
+                        <li>تحديد الفترة الزمنية المطلوبة للتقرير.</li>
+                        <li>إمكانية حفظ التقارير ومراجعتها ومشاركتها.</li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>النتيجة:</strong> Tager ليس مجرد برنامج لإصدار فواتير البيع والشراء، بل نظام متكامل يساعدك على إدارة ومتابعة النشاط التجاري من مكان واحد. من المبيعات والمشتريات والمنتجات والمخزون، إلى العملاء والموردين والمصروفات والموظفين والخزينة والأرباح والتقارير والتحليلات. الهدف الأساسي هو توفير رؤية واضحة ومتكاملة لصاحب النشاط، وتقليل الاعتماد على العمليات اليدوية، وتقليل الأخطاء، وتنظيم البيانات والعمليات، وتوفير معلومات دقيقة تساعد على اتخاذ قرارات أفضل.
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -281,6 +634,36 @@
                 const link = this.dataset.link;
                 if (link) window.location.href = link;
             });
+        });
+
+        // فتح وإغلاق مودال المميزات
+        const featuresModal = document.getElementById('featuresModal');
+        const featuresBtn = document.getElementById('featuresBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        featuresBtn.addEventListener('click', () => {
+            featuresModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            featuresModal.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+
+        featuresModal.addEventListener('click', (e) => {
+            if (e.target === featuresModal) {
+                featuresModal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // إغلاق عند الضغط على Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && featuresModal.classList.contains('open')) {
+                featuresModal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
         });
     </script>
 </body>
