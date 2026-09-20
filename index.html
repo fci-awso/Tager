@@ -161,7 +161,8 @@
 
         .demo-card {
             background: var(--surface);
-            border: 1px solid var(--line);
+            /* التعديل: حدود ملوّنة افتراضيًا (سيتم تحديد اللون لكل بطاقة) */
+            border: 1px solid var(--card-color, var(--line));
             border-radius: var(--radius);
             padding: 1.8rem 1.5rem;
             text-align: center;
@@ -180,7 +181,8 @@
         .demo-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lift);
-            border-color: var(--primary);
+            /* الحدود على hover تأخذ نفس لون البطاقة (أغمق قليلًا) */
+            border-color: var(--card-color, var(--primary));
         }
 
         .demo-card .icon-wrap {
@@ -232,28 +234,37 @@
             color: #fff;
         }
 
+        /* ==========================================================
+           ألوان كل قسم — تُطبَّق على البطاقة (الحدود) والأيقونة والزر
+           ========================================================== */
+
+        /* سوبرماركت */
+        .supermarket { --card-color: #0284c7; }
         .supermarket .icon-wrap { background: #e0f2fe; color: #0284c7; }
-        .supermarket:hover { border-color: #0284c7; }
         .supermarket .btn-demo { background: #e0f2fe; color: #0284c7; }
         .supermarket:hover .btn-demo { background: #0284c7; color: #fff; }
 
+        /* مطاعم */
+        .restaurant { --card-color: #dc2626; }
         .restaurant .icon-wrap { background: #fee2e2; color: #dc2626; }
-        .restaurant:hover { border-color: #dc2626; }
         .restaurant .btn-demo { background: #fee2e2; color: #dc2626; }
         .restaurant:hover .btn-demo { background: #dc2626; color: #fff; }
 
+        /* موبايلات وكمبيوترات */
+        .mobile { --card-color: #d97706; }
         .mobile .icon-wrap { background: #fef3c7; color: #d97706; }
-        .mobile:hover { border-color: #d97706; }
         .mobile .btn-demo { background: #fef3c7; color: #d97706; }
         .mobile:hover .btn-demo { background: #d97706; color: #fff; }
 
+        /* أجهزة كهربائية */
+        .electronics { --card-color: #7c3aed; }
         .electronics .icon-wrap { background: #ede9fe; color: #7c3aed; }
-        .electronics:hover { border-color: #7c3aed; }
         .electronics .btn-demo { background: #ede9fe; color: #7c3aed; }
         .electronics:hover .btn-demo { background: #7c3aed; color: #fff; }
 
+        /* ملابس */
+        .clothing { --card-color: #db2777; }
         .clothing .icon-wrap { background: #fce7f3; color: #db2777; }
-        .clothing:hover { border-color: #db2777; }
         .clothing .btn-demo { background: #fce7f3; color: #db2777; }
         .clothing:hover .btn-demo { background: #db2777; color: #fff; }
 
