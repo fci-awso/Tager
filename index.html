@@ -96,6 +96,15 @@
             margin: 0 auto 1.5rem;
         }
 
+        /* أزرار الهيدر */
+        .header-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: .8rem;
+        }
+
         /* زر عرض المميزات */
         .btn-features {
             display: inline-flex;
@@ -117,6 +126,30 @@
         .btn-features:hover {
             transform: translateY(-3px);
             box-shadow: 0 16px 30px rgba(59,130,246,.35);
+        }
+
+        /* زر تحميل النسخ */
+        .btn-download-main {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            background: linear-gradient(135deg, var(--positive), #047857);
+            color: #fff;
+            border: none;
+            padding: .9rem 1.8rem;
+            border-radius: 16px;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(16,185,129,.25);
+            transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+            font-family: inherit;
+        }
+
+        .btn-download-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 30px rgba(16,185,129,.4);
         }
 
         .cards-grid {
@@ -377,6 +410,8 @@
             .modal { border-radius: 16px; }
             .modal-header h2 { font-size: 1.1rem; }
             .feature-section h3 { font-size: .95rem; }
+            .btn-features,
+            .btn-download-main { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -390,41 +425,62 @@
                 اختر الديمو المناسب لنشاطك
             </h1>
             <p>استعرض النسخة التجريبية الأقرب لطبيعة عملك، وجرّب المزايا المصممة خصيصًا لكل قطاع.</p>
-            <button class="btn-features" id="featuresBtn">
-                <i class="fa-solid fa-star"></i>
-                عرض مميزات وتفاصيل البرنامج
-            </button>
+
+            <div class="header-actions">
+                <button class="btn-features" id="featuresBtn">
+                    <i class="fa-solid fa-star"></i>
+                    عرض مميزات وتفاصيل البرنامج
+                </button>
+
+                <a class="btn-download-main"
+                   href="http://tager.runasp.net/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-solid fa-download"></i>
+                    تحميل النسخ المتاحة
+                </a>
+            </div>
         </header>
 
         <div class="cards-grid" id="demoCards">
             <div class="demo-card supermarket" data-link="http://tagersupermarket.runasp.net/Admin/" style="animation-delay:.05s">
                 <div class="icon-wrap"><i class="fa-solid fa-basket-shopping"></i></div>
                 <h3>سوبرماركت</h3>
-                <a href="http://tagersupermarket.runasp.net/Admin/" class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
+                <a href="http://tagersupermarket.runasp.net/Admin/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
             </div>
 
             <div class="demo-card restaurant" data-link="http://tagerrestaurants.runasp.net/Admin/" style="animation-delay:.1s">
                 <div class="icon-wrap"><i class="fa-solid fa-utensils"></i></div>
                 <h3>مطاعم</h3>
-                <a href="http://tagerrestaurants.runasp.net/Admin/" class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
+                <a href="http://tagerrestaurants.runasp.net/Admin/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
             </div>
 
             <div class="demo-card mobile" data-link="http://tagercomputers.runasp.net/Admin/" style="animation-delay:.15s">
                 <div class="icon-wrap"><i class="fa-solid fa-mobile-screen"></i></div>
                 <h3>موبايلات وكمبيوترات</h3>
-                <a href="http://tagercomputers.runasp.net/Admin/" class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
+                <a href="http://tagercomputers.runasp.net/Admin/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
             </div>
 
             <div class="demo-card electronics" data-link="http://tagerelectricals.runasp.net/Admin/" style="animation-delay:.2s">
                 <div class="icon-wrap"><i class="fa-solid fa-plug"></i></div>
                 <h3>أجهزة كهربائية</h3>
-                <a href="http://tagerelectricals.runasp.net/Admin/" class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
+                <a href="http://tagerelectricals.runasp.net/Admin/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
             </div>
 
             <div class="demo-card clothing" data-link="http://tagerclothes.runasp.net/Admin/" style="animation-delay:.25s">
                 <div class="icon-wrap"><i class="fa-solid fa-shirt"></i></div>
                 <h3>ملابس</h3>
-                <a href="http://tagerclothes.runasp.net/Admin/" class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
+                <a href="http://tagerclothes.runasp.net/Admin/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
             </div>
         </div>
 
@@ -609,7 +665,7 @@
                         <li>تقارير الموظفين.</li>
                         <li>التقارير المالية.</li>
                         <li>تقارير حركة المنتجات.</li>
-                        <li>تقارير وتحليلات المنتجات.</li>
+                        <li>تقارير وتحليل المنتجات.</li>
                         <li>تقارير المقارنة بين المنتجات.</li>
                         <li>تحديد الفترة الزمنية المطلوبة للتقرير.</li>
                         <li>إمكانية حفظ التقارير ومراجعتها ومشاركتها.</li>
@@ -627,12 +683,13 @@
         // تحديث السنة الحالية تلقائيًا
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // إضافة تأثير عند النقر على البطاقة (اختياري)
+        // فتح الديمو في صفحة جديدة عند النقر على أي مكان في البطاقة
         document.querySelectorAll('.demo-card').forEach(card => {
             card.addEventListener('click', function(e) {
+                // لو المستخدم ضغط على الرابط مباشرة، سيتم التعامل معه عبر target="_blank"
                 if (e.target.closest('a')) return;
                 const link = this.dataset.link;
-                if (link) window.location.href = link;
+                if (link) window.open(link, '_blank', 'noopener,noreferrer');
             });
         });
 
