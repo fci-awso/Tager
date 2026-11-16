@@ -447,6 +447,76 @@
             .btn-features,
             .btn-download-main { width: 100%; justify-content: center; }
         }
+
+        /* ===== اختبار السيطرة على التجارة ===== */
+        .btn-quiz{display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#fff;border:none;padding:.9rem 1.8rem;border-radius:16px;font-weight:800;font-size:1rem;cursor:pointer;box-shadow:0 10px 20px rgba(234,88,12,.28);transition:transform .2s var(--ease),box-shadow .2s var(--ease);font-family:inherit;animation:qPulse 2.4s infinite}
+        .btn-quiz:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(234,88,12,.4);animation:none}
+        @keyframes qPulse{0%,100%{box-shadow:0 10px 20px rgba(234,88,12,.28)}50%{box-shadow:0 10px 30px rgba(234,88,12,.5)}}
+        #quizModal .modal{max-width:640px}
+        #solModal{z-index:1100}
+        .q-wrap{text-align:center}
+        .q-hero{width:84px;height:84px;border-radius:26px;margin:.4rem auto 1rem;background:linear-gradient(135deg,#f59e0b,#ea580c);color:#fff;font-size:2.2rem;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 24px rgba(234,88,12,.25)}
+        .q-wrap h3{font-size:1.5rem;font-weight:900;margin-bottom:.5rem;line-height:1.5}
+        .q-wrap .q-sub{color:var(--ink-soft);font-size:.98rem;margin-bottom:1rem}
+        .q-intro{background:var(--primary-soft);border-radius:14px;padding:1rem 1.2rem;font-size:.92rem;line-height:1.9;text-align:right;margin-bottom:1rem}
+        .q-how{text-align:right;font-size:.9rem;line-height:2;margin-bottom:1.2rem;background:var(--bg);border:1px dashed var(--line);border-radius:14px;padding:.8rem 1.2rem}
+        .q-how b{color:var(--ink)}
+        .q-how small{color:var(--ink-soft)}
+        .q-btn{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;border:none;border-radius:14px;padding:.85rem 1.8rem;font-family:inherit;font-weight:800;font-size:1rem;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--primary),var(--accent));box-shadow:0 8px 18px rgba(59,130,246,.25);transition:transform .2s var(--ease)}
+        .q-btn:hover{transform:translateY(-2px)}
+        .q-btn.ghost{background:var(--primary-soft);color:var(--primary-deep);box-shadow:none}
+        .q-btn.green{background:linear-gradient(135deg,var(--positive),#047857);box-shadow:0 8px 18px rgba(16,185,129,.25)}
+        .q-top{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;font-weight:700;color:var(--ink-soft);margin-bottom:.6rem}
+        .q-chip{background:var(--accent-soft);color:var(--accent);padding:.25rem .8rem;border-radius:999px}
+        .q-bar{height:10px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:1.6rem}
+        .q-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:999px;transition:width .35s var(--ease)}
+        .q-text{font-size:1.3rem;font-weight:800;line-height:1.8;min-height:6.5rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;animation:fadeInUp .35s var(--ease) both}
+        .q-opts{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-bottom:1.2rem}
+        .q-opt{border:2px solid var(--line);background:var(--surface);border-radius:16px;padding:1rem .6rem;cursor:pointer;font-family:inherit;transition:all .2s var(--ease);display:flex;flex-direction:column;align-items:center;gap:.3rem}
+        .q-opt b{font-size:1.15rem}
+        .q-opt small{color:var(--ink-soft);font-size:.78rem;line-height:1.5}
+        .q-opt i{font-size:1.6rem}
+        .q-opt.yes i{color:var(--positive)} .q-opt.no i{color:var(--danger)}
+        .q-opt.yes:hover,.q-opt.yes.sel{border-color:var(--positive);background:var(--positive-soft);transform:translateY(-3px)}
+        .q-opt.no:hover,.q-opt.no.sel{border-color:var(--danger);background:var(--danger-soft);transform:translateY(-3px)}
+        .q-back{background:none;border:none;color:var(--ink-soft);font-family:inherit;font-weight:700;font-size:.9rem;cursor:pointer}
+        .q-back:disabled{opacity:.35;cursor:default}
+        .q-gauge{position:relative;width:170px;height:170px;margin:.2rem auto .8rem}
+        .q-gauge svg{transform:rotate(-90deg)}
+        .q-gauge .bg{stroke:var(--line)} .q-gauge .fg{transition:stroke-dashoffset 1.1s var(--ease)}
+        .q-gauge div{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+        .q-gauge strong{font-size:2.3rem;font-weight:900;line-height:1}
+        .q-gauge span{font-size:.85rem;color:var(--ink-soft);margin-top:.3rem}
+        .q-tier{display:inline-block;padding:.4rem 1.2rem;border-radius:999px;font-weight:900;font-size:1.1rem;margin-bottom:.6rem}
+        .q-desc{font-size:.95rem;line-height:1.9;color:var(--ink-soft);margin-bottom:1.2rem}
+        .q-axes{text-align:right;margin-bottom:1rem}
+        .q-axis{margin-bottom:.7rem;font-size:.85rem;font-weight:700}
+        .q-axis div{display:flex;justify-content:space-between;margin-bottom:.25rem}
+        .q-axis i{display:block;height:8px;border-radius:999px;background:var(--line);overflow:hidden}
+        .q-axis i b{display:block;height:100%;border-radius:999px}
+        .q-note{font-size:.8rem;color:var(--ink-soft);background:var(--bg);border-radius:12px;padding:.7rem 1rem;margin-bottom:1.2rem;line-height:1.8}
+        .q-actions{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center}
+        .q-arrow i{transition:transform .25s var(--ease)} .q-arrow:hover i{transform:translateX(-6px)}
+        .sol-card{border:1px solid var(--line);border-radius:16px;padding:1.1rem 1.2rem;margin-bottom:1rem}
+        .sol-card.weak{border-color:var(--warn);background:var(--warn-soft)}
+        .sol-head{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.3rem}
+        .sol-head h4{font-size:1.05rem;font-weight:800;color:var(--primary-deep)}
+        .sol-badge{font-size:.75rem;font-weight:800;padding:.2rem .7rem;border-radius:999px;background:var(--positive-soft);color:var(--positive)}
+        .weak .sol-badge{background:var(--warn);color:#fff}
+        .sol-rng{font-size:.8rem;color:var(--accent);font-weight:700;margin-bottom:.5rem}
+        .sol-prob{font-size:.9rem;font-weight:700;margin-bottom:.6rem;line-height:1.8}
+        .sol-card ul{list-style:none;margin-bottom:.6rem}
+        .sol-card li{font-size:.86rem;color:var(--ink-soft);padding:.2rem 0;display:flex;gap:.5rem}
+        .sol-card li::before{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;color:var(--positive);font-size:.75rem;margin-top:.3rem}
+        .sol-sum{font-size:.88rem;line-height:1.9;background:var(--positive-soft);border-radius:12px;padding:.7rem 1rem}
+        .sol-cta{background:linear-gradient(135deg,var(--primary-deep),var(--accent));color:#fff;border-radius:18px;padding:1.4rem;text-align:center;margin-top:1.2rem}
+        .sol-cta h4{font-size:1.3rem;font-weight:900;margin-bottom:.5rem}
+        .sol-cta p{font-size:.92rem;line-height:1.9;margin-bottom:.5rem}
+        .sol-cta .q-actions{margin-top:.8rem}
+        .sol-cta .q-btn{background:#fff;color:var(--primary-deep);box-shadow:none}
+        .sol-cta .q-btn.wa{background:#22c55e;color:#fff}
+        .sol-info{font-size:.85rem;margin-top:1rem;opacity:.95;line-height:1.9}
+        @media (max-width:600px){.btn-quiz{width:100%;justify-content:center}.q-text{font-size:1.1rem}.q-wrap h3{font-size:1.25rem}}
     </style>
 </head>
 <body>
@@ -461,6 +531,11 @@
             <p>استعرض النسخة التجريبية الأقرب لطبيعة عملك، وجرّب المزايا المصممة خصيصًا لكل قطاع.</p>
 
             <div class="header-actions">
+                <button class="btn-quiz" id="quizBtn">
+                    <i class="fa-solid fa-clipboard-question"></i>
+                    اختبر سيطرتك على تجارتك
+                </button>
+
                 <button class="btn-features" id="featuresBtn">
                     <i class="fa-solid fa-star"></i>
                     عرض مميزات وتفاصيل البرنامج
@@ -825,6 +900,116 @@
             </div>
         </div>
     </div>
+
+
+    <!-- مودال اختبار السيطرة على التجارة -->
+    <div class="modal-overlay" id="quizModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-clipboard-question" style="color:#ea580c"></i> اختبر سيطرتك على تجارتك</h2>
+                <button class="modal-close" id="quizClose" aria-label="إغلاق">&times;</button>
+            </div>
+            <div class="modal-body" id="qBody"></div>
+        </div>
+    </div>
+
+    <!-- مودال: كل سؤال له إجابة في Tager -->
+    <div class="modal-overlay" id="solModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="fa-solid fa-lightbulb" style="color:var(--primary)"></i> كل سؤال من دول ليه إجابة في Tager</h2>
+                <button class="modal-close" id="solClose" aria-label="إغلاق">&times;</button>
+            </div>
+            <div class="modal-body" id="sBody"></div>
+        </div>
+    </div>
+
+    <script>window.TAGER_QUIZ={"sections": ["الأرباح والمكاسب", "المخزون والبضاعة", "العملاء والمديونيات والتحصيلات", "الموردين والمشتريات", "الخزينة والأموال والمصروفات", "الإدارة والسيطرة على المحل"], "q": [{"n": 1, "s": 0, "t": "كام صافي ربح محلك الشهر اللي فات بعد خصم كل المصروفات؟"}, {"n": 2, "s": 0, "t": "كام إجمالي مبيعاتك الشهر اللي فات؟"}, {"n": 3, "s": 0, "t": "كام إجمالي تكلفة البضاعة اللي بعتها خلال الشهر؟"}, {"n": 4, "s": 0, "t": "كام إجمالي المصروفات التشغيلية للمحل الشهر اللي فات؟"}, {"n": 5, "s": 0, "t": "إيه أكتر 5 منتجات حققت لك أرباح خلال الشهر؟"}, {"n": 6, "s": 0, "t": "هل تعرف المنتجات اللي بتبيع كتير لكن هامش ربحها ضعيف؟"}, {"n": 7, "s": 0, "t": "هل أرباح الشهر ده أعلى ولا أقل من الشهر اللي فات؟ وبكام؟"}, {"n": 8, "s": 1, "t": "كام القيمة الإجمالية للبضاعة الموجودة عندك حاليًا بسعر التكلفة؟"}, {"n": 9, "s": 1, "t": "هل الكميات الموجودة فعليًا مطابقة للكميات المسجلة عندك؟"}, {"n": 10, "s": 1, "t": "هل تعرف كام قطعة من كل منتج موجودة في المخزن؟"}, {"n": 11, "s": 1, "t": "إيه المنتجات اللي قربت تخلص ومحتاجة تطلبها من المورد؟"}, {"n": 12, "s": 1, "t": "إيه المنتجات الراكدة اللي مخزنة عندك بقالها فترة ومش بتتباع؟"}, {"n": 13, "s": 1, "t": "إيه أسرع 10 منتجات في الحركة والبيع؟"}, {"n": 14, "s": 1, "t": "هل تقدر تعرف قيمة المخزون في أي وقت من غير جرد يدوي؟"}, {"n": 15, "s": 2, "t": "كام إجمالي المديونيات المستحقة ليك عند العملاء حاليًا؟"}, {"n": 16, "s": 2, "t": "مين أكتر 10 عملاء عليهم مديونيات؟"}, {"n": 17, "s": 2, "t": "كام إجمالي المبالغ المتأخرة عند العملاء، ومين متأخر في السداد وبقاله قد إيه؟"}, {"n": 18, "s": 2, "t": "كام إجمالي التحصيلات اللي حصلت خلال الشهر؟"}, {"n": 19, "s": 2, "t": "هل تقدر تعرف كل عميل اشترى منك بكام، وسدد كام، ولسه عليه كام؟"}, {"n": 20, "s": 2, "t": "هل تعرف إجمالي مبيعاتك الآجلة مقارنة بالمبيعات النقدية؟"}, {"n": 21, "s": 3, "t": "كام إجمالي المبالغ المستحقة عليك للموردين حاليًا؟"}, {"n": 22, "s": 3, "t": "هل تعرف اشتريت بكام من كل مورد، ودفعت له كام، ولسه عليك كام؟"}, {"n": 23, "s": 3, "t": "هل تقدر تحدد المنتجات اللي محتاجة تعيد شراءها قبل ما تخلص؟"}, {"n": 24, "s": 4, "t": "كام المبلغ الموجود في الخزينة حاليًا؟ وهل مطابق للرصيد المسجل؟"}, {"n": 25, "s": 4, "t": "كام كان رصيد الخزينة امبارح؟"}, {"n": 26, "s": 4, "t": "كام إجمالي الفلوس اللي دخلت وخرجت من الخزينة خلال الشهر؟"}, {"n": 27, "s": 4, "t": "هل تقدر تحدد مصدر كل مبلغ دخل الخزينة وسبب كل مبلغ خرج منها؟"}, {"n": 28, "s": 4, "t": "كام إجمالي مصروفاتك الشهرية، وإيه أكتر أنواع المصروفات اللي بتستهلك فلوس المحل؟"}, {"n": 29, "s": 5, "t": "لو غبت عن المحل أسبوع، هل تقدر تتابع مبيعاته ومصروفاته ومخزونه وكل العمليات اللي بتحصل فيه؟"}, {"n": 30, "s": 5, "t": "هل تقدر تعرف مين من الموظفين نفذ كل عملية، وهل كل موظف عنده صلاحيات مناسبة لشغله؟"}, {"n": 31, "s": 5, "t": "هل تقدر تطلع تقرير شامل عن حالة محلك في أي وقت من غير ما تجمع أرقام من دفاتر وملفات مختلفة؟"}], "tiers": [{"r": "من 0% إلى 25%", "t": "محتاج تراجع حساباتك", "d": "فيه معلومات أساسية عن نشاطك مش واضحة ليك بالشكل الكافي، وده ممكن يصعّب عليك متابعة تجارتك واتخاذ قرارات دقيقة."}, {"r": "أكثر من 25% وحتى 50%", "t": "عندك صورة جزئية", "d": "أنت عارف بعض تفاصيل تجارتك، لكن لسه فيه جوانب مهمة محتاجة متابعة وتنظيم أفضل."}, {"r": "أكثر من 50% وحتى 75%", "t": "سيطرتك جيدة لكن محتاجة تطوير", "d": "عندك معرفة جيدة بنشاطك، لكن ممكن تحسّن دقة وسرعة الوصول للمعلومات وتقلل الاعتماد على الحسابات اليدوية."}, {"r": "أكثر من 75% وحتى 100%", "t": "سيطرتك قوية", "d": "عندك معرفة جيدة بتفاصيل نشاطك، والاستمرار في متابعة الأرقام وتحديثها هيساعدك تحافظ على المستوى ده وتطوره."}], "note": "النتيجة دي مؤشر مبدئي لمدى قدرتك على الوصول لمعلومات نشاطك، مش تقييم لنجاحك كتاجر أو حجم أرباحك.", "intro": "كل تاجر محتاج يعرف أرقام محله كويس، لكن هل أنت فعلًا عارف كل التفاصيل الخاصة بتجارتك؟ جاوب على الأسئلة الجاية، واكتشف بنفسك مدى سيطرتك على نشاطك التجاري.", "how": ["☐ أيوه، أقدر أجاوب برقم دقيق = نقطة", "☐ لا، مش عارف أو إجابتي تقريبية = صفر", "أيوه يعني عندك معلومة دقيقة ومحدثة، مش تخمين."], "axes": [{"title": "الأرباح والمكاسب", "range": "الأسئلة 1–7", "problem": "مش واضح ليك ربحك الحقيقي بعد المصروفات، ولا إيه المنتجات اللي بتكسّبك فعلًا.", "summary": "تقدر تتابع المبيعات وتكلفة البضاعة والمصروفات والأرباح، وتعرف المنتجات اللي بتحقق لك أعلى أرباح، والمنتجات اللي مبيعاتها كبيرة لكن هامش ربحها ضعيف.", "bullets": ["تقارير الأرباح والخسائر.", "تحليل مبيعات المنتجات وتكلفتها وأرباحها.", "حساب هامش الربح.", "معرفة متوسط وآخر أسعار الشراء والبيع.", "مقارنة أداء المنتجات.", "مقارنة النتائج بين الفترات الزمنية المختلفة.", "تقارير المصروفات."]}, {"title": "المخزون والبضاعة", "range": "الأسئلة 8–14", "problem": "مش عارف الكميات الفعلية وقيمة البضاعة، ولا إيه اللي قرب يخلص أو واقف.", "summary": "تقدر تعرف الكميات الموجودة وقيمة المخزون، وتحدد المنتجات اللي قربت تخلص والمنتجات الراكدة اللي مجمدة رأس مالك، وتاخد قرارات إعادة الشراء بناءً على بيانات فعلية.", "bullets": ["إدارة المنتجات والأقسام والباركود.", "متابعة الكميات المتاحة في المخزون.", "تحديث المخزون تلقائيًا مع البيع والشراء والمرتجعات.", "تحديد الحد الأدنى للمخزون.", "تنبيهات المنتجات القريبة من النفاد.", "تحليل المنتجات سريعة وبطيئة الحركة.", "معرفة قيمة المخزون الحالية.", "تحليل حركة كل منتج."]}, {"title": "العملاء والمديونيات والتحصيلات", "range": "الأسئلة 15–20", "problem": "مش عارف مين عليه فلوس، وكام، ومتأخر بقاله قد إيه.", "summary": "تقدر تعرف كل عميل عليه كام، وسدد كام، ولسه مستحق عليه كام، وتتابع المتأخرات والتحصيلات من غير ما تتوه بين الدفاتر والحسابات.", "bullets": ["إدارة حسابات العملاء.", "متابعة المديونيات والمبالغ المستحقة.", "تسجيل التحصيلات والمدفوعات.", "متابعة الفواتير المدفوعة وغير المدفوعة والمدفوعة جزئيًا.", "تسجيل المديونيات السابقة للعملاء.", "معرفة إجمالي مشتريات وسداد كل عميل.", "تحليل المبيعات النقدية والآجلة.", "متابعة المرتجعات وتأثيرها على مديونية العميل."]}, {"title": "الموردين والمشتريات", "range": "الأسئلة 21–23", "problem": "مش عارف عليك كام للموردين، ولا امتى تعيد الشراء.", "summary": "تقدر تعرف إجمالي مشترياتك من كل مورد، ودفعت له كام، ولسه عليك كام، وتحدد المنتجات اللي محتاجة تعيد شراءها قبل ما تخلص.", "bullets": ["إدارة بيانات الموردين.", "تسجيل فواتير المشتريات.", "متابعة المبالغ المستحقة للموردين.", "تسجيل المدفوعات.", "تسجيل المديونيات السابقة للموردين.", "تحليل المشتريات حسب المورد.", "متابعة الكميات ومستويات المخزون والحد الأدنى."]}, {"title": "الخزينة والأموال والمصروفات", "range": "الأسئلة 24–28", "problem": "مش عارف رصيد الخزينة بالظبط، ولا الفلوس دخلت وخرجت منين وليه.", "summary": "تقدر تعرف رصيد الخزينة، وكل مبلغ دخل أو خرج، ومصدره أو سبب صرفه، وتتابع مصروفات المحل وتعرف الفلوس بتروح فين.", "bullets": ["متابعة رصيد الخزينة الحالي.", "معرفة رصيد الخزينة خلال الفترات السابقة.", "تسجيل كل عمليات دخول وخروج الأموال.", "تسجيل الإيداعات ومصادرها.", "تسجيل المصروفات وتصنيفها.", "تقارير حركة الخزينة.", "تحليل المصروفات والإيداعات حسب الفترة الزمنية."]}, {"title": "الإدارة والسيطرة على المحل", "range": "الأسئلة 29–31", "problem": "مش قادر تتابع محلك ولا تعرف مين عمل إيه لو مش موجود.", "summary": "تقدر تتابع أداء محلك من مكان واحد، وتعرف إيه اللي بيحصل حتى لو مش موجود بنفسك، وتحدد صلاحيات الموظفين وتراجع العمليات اللي نفذوها، وتطلع تقارير تساعدك تاخد قرارات أفضل.", "bullets": ["لوحة تحكم شاملة Dashboard.", "متابعة المبيعات والمخزون والمصروفات والمديونيات.", "تقارير المستخدمين والموظفين.", "معرفة المستخدم اللي نفذ كل عملية.", "نظام صلاحيات للمدير والموظفين.", "تقارير شاملة حسب الفترة الزمنية.", "تصدير التقارير بصيغة PDF."]}], "cta": ["تجارتك تستاهل تكون تحت سيطرتك.", "Tager مش مجرد برنامج فواتير، ده نظام متكامل بيساعدك تدير مبيعاتك ومشترياتك ومخزونك وحساباتك وموظفينك وخزنتك من مكان واحد.", "جرّب Tager بنفسك وشوف إزاي ممكن يسهّل إدارة تجارتك."], "title": "هل أنت مسيطر على تجارتك فعلًا؟", "sub": "اختبر مدى معرفتك بأرباحك ومخزونك وحساباتك وإدارة محلك.", "s0": "بدل ما تجمع أرقامك من دفاتر وملفات مختلفة، Tager بيساعدك تتابع تفاصيل تجارتك من مكان واحد."};</script>
+
+    <script>
+    (function(){
+        const T=window.TAGER_QUIZ,$=id=>document.getElementById(id);
+        const qm=$('quizModal'),sm=$('solModal'),qb=$('qBody'),sb=$('sBody');
+        const N=T.q.length;let i=0,ans=[];
+        const open=m=>{m.classList.add('open');document.body.style.overflow='hidden'};
+        const close=m=>{m.classList.remove('open');if(!document.querySelector('.modal-overlay.open'))document.body.style.overflow=''};
+        const esc=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+        const COL=['#ef4444','#f59e0b','#3b82f6','#10b981'];
+        const tierOf=p=>p<=25?0:p<=50?1:p<=75?2:3;
+        const scoreOf=()=>ans.filter(a=>a===1).length;
+        const axisScores=()=>T.sections.map((_,s)=>{const qs=T.q.filter(q=>q.s===s);return{n:qs.length,ok:qs.filter(q=>ans[q.n-1]===1).length}});
+
+        function intro(){
+            i=0;ans=[];
+            qb.innerHTML=`<div class="q-wrap">
+              <div class="q-hero"><i class="fa-solid fa-chart-line"></i></div>
+              <h3>${esc(T.title)}</h3>
+              <p class="q-sub">${esc(T.sub)}</p>
+              <div class="q-intro">${esc(T.intro)}</div>
+              <div class="q-how"><b>طريقة الإجابة</b><br>✅ ${esc(T.how[0].replace('☐ ',''))}<br>❌ ${esc(T.how[1].replace('☐ ',''))}<br><small>${esc(T.how[2])}</small></div>
+              <button class="q-btn" id="qStart"><i class="fa-solid fa-play"></i> ابدأ الاختبار (${N} سؤال)</button></div>`;
+            $('qStart').onclick=ask;
+        }
+        function ask(){
+            const q=T.q[i];
+            qb.innerHTML=`<div class="q-wrap">
+              <div class="q-top"><span>سؤال ${i+1} من ${N}</span><span class="q-chip">${esc(T.sections[q.s])}</span></div>
+              <div class="q-bar"><i style="width:${i/N*100}%"></i></div>
+              <div class="q-text" key="${i}">${esc(q.t)}</div>
+              <div class="q-opts">
+                <button class="q-opt yes ${ans[i]===1?'sel':''}" data-v="1"><i class="fa-solid fa-circle-check"></i><b>أيوه</b><small>أقدر أجاوب برقم دقيق</small></button>
+                <button class="q-opt no ${ans[i]===0?'sel':''}" data-v="0"><i class="fa-solid fa-circle-xmark"></i><b>لا</b><small>مش عارف أو إجابتي تقريبية</small></button>
+              </div>
+              <button class="q-back" id="qBack" ${i?'':'disabled'}><i class="fa-solid fa-arrow-right"></i> السابق</button></div>`;
+            requestAnimationFrame(()=>{qb.querySelector('.q-bar i').style.width=((i+1)/N*100)+'%'});
+            qb.querySelectorAll('.q-opt').forEach(b=>b.onclick=()=>{
+                ans[i]=+b.dataset.v;b.classList.add('sel');
+                setTimeout(()=>{i++;i<N?ask():result()},220);
+            });
+            $('qBack').onclick=()=>{if(i){i--;ask()}};
+        }
+        function result(){
+            const sc=scoreOf(),p=sc/N*100,pr=Math.round(p),t=tierOf(p),c=COL[t],tr=T.tiers[t],C=2*Math.PI*54;
+            const ax=axisScores().map((a,s)=>{const pc=Math.round(a.ok/a.n*100);return`<div class="q-axis"><div><span>${esc(T.sections[s])}</span><span>${a.ok}/${a.n}</span></div><i><b style="width:${pc}%;background:${COL[tierOf(a.ok/a.n*100)]}"></b></i></div>`}).join('');
+            qb.innerHTML=`<div class="q-wrap">
+              <div class="q-gauge"><svg width="170" height="170" viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="54" fill="none" stroke-width="10"/><circle class="fg" cx="60" cy="60" r="54" fill="none" stroke="${c}" stroke-width="10" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C}"/></svg>
+                <div><strong style="color:${c}">${pr}%</strong><span>${sc} / ${N}</span></div></div>
+              <div class="q-tier" style="background:${c}22;color:${c}">${esc(tr.t)}</div>
+              <p class="q-desc">${esc(tr.d)}</p>
+              <div class="q-axes">${ax}</div>
+              <div class="q-note">${esc(T.note)}</div>
+              <div class="q-actions">
+                <button class="q-btn green q-arrow" id="qSol">شوف إزاي Tager يحل ده <i class="fa-solid fa-arrow-left"></i></button>
+                <button class="q-btn ghost" id="qRe"><i class="fa-solid fa-rotate-right"></i> أعد الاختبار</button>
+              </div></div>`;
+            requestAnimationFrame(()=>setTimeout(()=>{qb.querySelector('.fg').style.strokeDashoffset=C*(1-p/100)},60));
+            $('qSol').onclick=solutions;$('qRe').onclick=intro;
+        }
+        function solutions(){
+            const sc=axisScores();
+            const cards=T.axes.map((a,s)=>{const weak=sc[s].ok/sc[s].n<=.5;
+                return`<div class="sol-card ${weak?'weak':''}">
+                  <div class="sol-head"><h4>${esc(a.title)}</h4><span class="sol-badge">${weak?'محتاج اهتمام':'نتيجتك فيه جيدة'} · ${sc[s].ok}/${sc[s].n}</span></div>
+                  <div class="sol-rng">${esc(a.range)}</div>
+                  <p class="sol-prob">${esc(a.problem)}</p>
+                  <ul>${a.bullets.map(b=>`<li>${esc(b)}</li>`).join('')}</ul>
+                  <div class="sol-sum"><b>إزاي بيساعدك؟</b> ${esc(a.summary)}</div></div>`}).join('');
+            sb.innerHTML=`<p class="section-intro">${esc(T.s0)}</p>${cards}
+              <div class="sol-cta"><h4>${esc(T.cta[0])}</h4><p>${esc(T.cta[1])}</p><p><b>${esc(T.cta[2])}</b></p>
+                <div class="q-actions">
+                  <a class="q-btn" href="https://fci-awso.github.io/Tager/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i> افتح الديمو المباشر</a>
+                </div></div>
+              <div class="q-actions" style="margin-top:1rem"><button class="q-btn ghost" id="solBack"><i class="fa-solid fa-arrow-right"></i> رجوع للنتيجة</button></div>`;
+            $('solBack').onclick=()=>close(sm);
+            sm.querySelector('.modal').scrollTop=0;open(sm);
+        }
+        $('quizBtn').onclick=()=>{intro();open(qm)};
+        $('quizClose').onclick=()=>close(qm);
+        $('solClose').onclick=()=>close(sm);
+        sm.addEventListener('click',e=>{if(e.target===sm)close(sm)});
+        document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(sm.classList.contains('open'))close(sm);else if(qm.classList.contains('open'))close(qm)});
+    })();
+    </script>
 
     <script>
         // تحديث السنة الحالية تلقائيًا
