@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اختبر سيطرتك على تجارتك | تاجر</title>
+<meta name="description" content="اختبار سريع من 31 سؤال يكشف مدى معرفتك بأرباحك ومخزونك وحساباتك وإدارة محلك.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--bg:#f8fafc;--surface:#fff;--ink:#1e293b;--soft:#64748b;--line:#e2e8f0;--primary:#3b82f6;--deep:#1e40af;--psoft:#eaf2ff;--accent:#8b5cf6;--asoft:#f3eeff;--ok:#10b981;--oksoft:#e6f7ef;--warn:#f59e0b;--wsoft:#fff7db;--bad:#ef4444;--badsoft:#fdecec;--orange:#ea580c;--ease:cubic-bezier(.22,.61,.36,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;line-height:1.7;
+background-image:radial-gradient(circle at 8% 6%,rgba(59,130,246,.09),transparent 38%),radial-gradient(circle at 94% 92%,rgba(139,92,246,.09),transparent 38%);background-attachment:fixed}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+:focus-visible{outline:3px solid rgba(59,130,246,.45);outline-offset:2px}
+.top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top>div{max-width:860px;margin:auto;padding:.7rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.15rem}
+.brand i{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.back{font-size:.85rem;font-weight:700;color:var(--soft);display:flex;align-items:center;gap:.4rem;padding:.4rem .8rem;border-radius:10px;transition:background .2s}
+.back:hover{background:var(--psoft);color:var(--deep)}
+.tools{display:flex;align-items:center;gap:.3rem}
+
+main{max-width:760px;margin:0 auto;padding:1.6rem 1rem 3rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:26px;box-shadow:0 20px 50px rgba(15,23,42,.07);padding:2rem 1.6rem;text-align:center}
+.in{animation:rise .45s var(--ease) both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero{width:92px;height:92px;border-radius:28px;margin:0 auto 1.1rem;background:linear-gradient(135deg,var(--warn),var(--orange));color:#fff;font-size:2.4rem;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 28px rgba(234,88,12,.28)}
+h1{font-size:clamp(1.5rem,4.5vw,2.1rem);font-weight:900;line-height:1.5;margin-bottom:.4rem}
+.sub{color:var(--soft);margin-bottom:1.2rem}
+.stats{display:flex;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.stats span{background:var(--asoft);color:var(--accent);font-weight:800;font-size:.85rem;padding:.35rem .9rem;border-radius:999px}
+.box{text-align:right;border-radius:16px;padding:1rem 1.2rem;font-size:.93rem;line-height:2;margin-bottom:1rem}
+.box.blue{background:var(--psoft)}
+.box.dash{background:var(--bg);border:1px dashed var(--line)}
+.box small{color:var(--soft)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;border:none;border-radius:14px;padding:.9rem 2rem;font-weight:800;font-size:1rem;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--primary),var(--accent));box-shadow:0 10px 20px rgba(59,130,246,.25);transition:transform .2s var(--ease),box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 26px rgba(59,130,246,.32)}
+.btn.ghost{background:var(--psoft);color:var(--deep);box-shadow:none}
+.btn.green{background:linear-gradient(135deg,var(--ok),#047857);box-shadow:0 10px 20px rgba(16,185,129,.25)}
+.btn.white{background:#fff;color:var(--deep);box-shadow:none}
+.acts{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center}
+.meta{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;font-weight:700;color:var(--soft);margin-bottom:.6rem}
+.chip{background:var(--asoft);color:var(--accent);padding:.25rem .9rem;border-radius:999px}
+.bar{height:10px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:1.8rem}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--primary),var(--accent));border-radius:999px;transition:width .4s var(--ease)}
+.q{font-size:clamp(1.15rem,3.6vw,1.45rem);font-weight:800;line-height:1.9;min-height:7rem;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem}
+.opt{border:2px solid var(--line);background:var(--surface);border-radius:18px;padding:1.1rem .6rem;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.25rem;transition:all .2s var(--ease)}
+.opt i{font-size:1.8rem}.opt b{font-size:1.2rem}.opt small{color:var(--soft);font-size:.78rem;line-height:1.5}
+.opt.yes i{color:var(--ok)}.opt.no i{color:var(--bad)}
+.opt.yes:hover,.opt.yes.sel{border-color:var(--ok);background:var(--oksoft);transform:translateY(-3px)}
+.opt.no:hover,.opt.no.sel{border-color:var(--bad);background:var(--badsoft);transform:translateY(-3px)}
+.prev{background:none;border:none;color:var(--soft);font-weight:700;font-size:.9rem;cursor:pointer;padding:.4rem .8rem}
+.prev:disabled{opacity:.35;cursor:default}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+.restart:hover{color:var(--bad)}
+.hint{font-size:.75rem;color:var(--soft);margin-top:.4rem}
+.gauge{position:relative;width:190px;height:190px;margin:.2rem auto .8rem}
+.gauge svg{transform:rotate(-90deg)}
+.gauge .bg{stroke:var(--line)}.gauge .fg{transition:stroke-dashoffset 1.2s var(--ease)}
+.gauge div{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.gauge strong{font-size:2.6rem;font-weight:900;line-height:1}
+.gauge span{font-size:.85rem;color:var(--soft);margin-top:.3rem}
+.tier{display:inline-block;padding:.4rem 1.3rem;border-radius:999px;font-weight:900;font-size:1.15rem;margin-bottom:.4rem}
+.rng{font-size:.8rem;color:var(--soft);margin-bottom:.6rem}
+.desc{color:var(--soft);line-height:1.95;margin-bottom:1.4rem}
+.axes{text-align:right;margin-bottom:1.2rem}
+.axis{margin-bottom:.8rem;font-size:.85rem;font-weight:700}
+.axis div{display:flex;justify-content:space-between;margin-bottom:.25rem}
+.axis i{display:block;height:9px;border-radius:999px;background:var(--line);overflow:hidden}
+.axis b{display:block;height:100%;width:0;border-radius:999px;transition:width .9s var(--ease)}
+.note{font-size:.8rem;color:var(--soft);background:var(--bg);border-radius:12px;padding:.7rem 1rem;margin-bottom:1.3rem}
+.sol{text-align:right}
+.sol .lead{text-align:center;color:var(--soft);margin-bottom:1.3rem}
+.sc{border:1px solid var(--line);border-radius:18px;padding:1.2rem;margin-bottom:1rem}
+.sc.weak{border-color:var(--warn);background:var(--wsoft)}
+.sh{display:flex;justify-content:space-between;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.2rem}
+.sh h3{font-size:1.05rem;font-weight:800;color:var(--deep)}
+.badge{font-size:.75rem;font-weight:800;padding:.2rem .7rem;border-radius:999px;background:var(--oksoft);color:var(--ok)}
+.weak .badge{background:var(--warn);color:#fff}
+.sr{font-size:.8rem;color:var(--accent);font-weight:700;margin-bottom:.5rem}
+.sp{font-size:.9rem;font-weight:700;margin-bottom:.6rem}
+.sc ul{list-style:none;margin-bottom:.7rem}
+.sc li{font-size:.86rem;color:var(--soft);padding:.15rem 0;display:flex;gap:.5rem}
+.sc li::before{content:"\f00c";font-family:"Font Awesome 6 Free";font-weight:900;color:var(--ok);font-size:.72rem;margin-top:.35rem}
+.ss{font-size:.88rem;background:var(--oksoft);border-radius:12px;padding:.7rem 1rem}
+.cta{background:linear-gradient(135deg,var(--deep),var(--accent));color:#fff;border-radius:20px;padding:1.6rem 1.2rem;text-align:center;margin:1.4rem 0 1rem}
+.cta h3{font-size:1.4rem;font-weight:900;margin-bottom:.5rem}
+.cta p{font-size:.93rem;line-height:1.9;margin-bottom:.4rem}
+.cta .acts{margin-top:.9rem}
+.dlg{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(15,23,42,.45);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .22s var(--ease),visibility 0s linear .22s}
+.dlg.open{opacity:1;visibility:visible;transition:opacity .22s var(--ease)}
+.dlg-box{width:100%;max-width:400px;background:var(--surface);border-radius:24px;padding:1.8rem 1.5rem 1.4rem;text-align:center;box-shadow:0 30px 70px rgba(15,23,42,.3);transform:translateY(16px) scale(.94);transition:transform .3s cubic-bezier(.34,1.4,.64,1)}
+.dlg.open .dlg-box{transform:none}
+.dlg-ico{width:70px;height:70px;border-radius:50%;margin:0 auto 1rem;background:var(--wsoft);color:var(--warn);font-size:1.9rem;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 8px rgba(245,158,11,.12)}
+.dlg h3{font-size:1.2rem;font-weight:900;line-height:1.7;margin-bottom:.3rem}
+.dlg p{color:var(--soft);font-size:.95rem;margin-bottom:1.4rem}
+.dlg-acts{display:flex;flex-direction:column;gap:.6rem}
+.dlg-acts .btn{width:100%;padding:.8rem 1rem}
+.btn.danger{background:linear-gradient(135deg,#f97316,var(--bad));box-shadow:0 10px 20px rgba(239,68,68,.25)}
+footer{text-align:center;color:var(--soft);font-size:.8rem;padding:0 1rem 2rem}
+@media(max-width:520px){.card{padding:1.5rem 1rem;border-radius:22px}.btn{width:100%}.back{font-size:.78rem;padding:.4rem .5rem}.brand{font-size:1rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div>
+  <a class="brand" href="index.html"><i class="fa-solid fa-cart-shopping"></i> تاجر</a>
+  <div class="tools">
+    <a class="back" href="https://fci-awso.github.io/Tager/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i><span>افتح الديمو المباشر</span></a>
+  </div>
+</div></header>
+<main><section class="card" id="app" aria-live="polite"></section></main>
+<div class="dlg" id="dlg" role="alertdialog" aria-modal="true" aria-labelledby="dlgT" aria-describedby="dlgD">
+  <div class="dlg-box">
+    <div class="dlg-ico"><i class="fa-solid fa-triangle-exclamation"></i></div>
+    <h3 id="dlgT">متأكد إنك عايز تبدأ الاختبار من الأول؟</h3>
+    <p id="dlgD">إجاباتك الحالية هتتمسح.</p>
+    <div class="dlg-acts">
+      <button class="btn danger" id="dlgOk" type="button"><i class="fa-solid fa-rotate-right"></i> نعم، ابدأ من الأول</button>
+      <button class="btn ghost" id="dlgNo" type="button">لا، كمّل الاختبار</button>
+    </div>
+  </div>
+</div>
+<footer>© <span id="yr"></span> تاجر — كل الحقوق محفوظة</footer>
+<script>
+const T={"sections": ["الأرباح والمكاسب", "المخزون والبضاعة", "العملاء والمديونيات والتحصيلات", "الموردين والمشتريات", "الخزينة والأموال والمصروفات", "الإدارة والسيطرة على المحل"], "q": [{"n": 1, "s": 0, "t": "كام صافي ربح محلك الشهر اللي فات بعد خصم كل المصروفات؟"}, {"n": 2, "s": 0, "t": "كام إجمالي مبيعاتك الشهر اللي فات؟"}, {"n": 3, "s": 0, "t": "كام إجمالي تكلفة البضاعة اللي بعتها خلال الشهر؟"}, {"n": 4, "s": 0, "t": "كام إجمالي المصروفات التشغيلية للمحل الشهر اللي فات؟"}, {"n": 5, "s": 0, "t": "إيه أكتر 5 منتجات حققت لك أرباح خلال الشهر؟"}, {"n": 6, "s": 0, "t": "هل تعرف المنتجات اللي بتبيع كتير لكن هامش ربحها ضعيف؟"}, {"n": 7, "s": 0, "t": "هل أرباح الشهر ده أعلى ولا أقل من الشهر اللي فات؟ وبكام؟"}, {"n": 8, "s": 1, "t": "كام القيمة الإجمالية للبضاعة الموجودة عندك حاليًا بسعر التكلفة؟"}, {"n": 9, "s": 1, "t": "هل الكميات الموجودة فعليًا مطابقة للكميات المسجلة عندك؟"}, {"n": 10, "s": 1, "t": "هل تعرف كام قطعة من كل منتج موجودة في المخزن؟"}, {"n": 11, "s": 1, "t": "إيه المنتجات اللي قربت تخلص ومحتاجة تطلبها من المورد؟"}, {"n": 12, "s": 1, "t": "إيه المنتجات الراكدة اللي مخزنة عندك بقالها فترة ومش بتتباع؟"}, {"n": 13, "s": 1, "t": "إيه أسرع 10 منتجات في الحركة والبيع؟"}, {"n": 14, "s": 1, "t": "هل تقدر تعرف قيمة المخزون في أي وقت من غير جرد يدوي؟"}, {"n": 15, "s": 2, "t": "كام إجمالي المديونيات المستحقة ليك عند العملاء حاليًا؟"}, {"n": 16, "s": 2, "t": "مين أكتر 10 عملاء عليهم مديونيات؟"}, {"n": 17, "s": 2, "t": "كام إجمالي المبالغ المتأخرة عند العملاء، ومين متأخر في السداد وبقاله قد إيه؟"}, {"n": 18, "s": 2, "t": "كام إجمالي التحصيلات اللي حصلت خلال الشهر؟"}, {"n": 19, "s": 2, "t": "هل تقدر تعرف كل عميل اشترى منك بكام، وسدد كام، ولسه عليه كام؟"}, {"n": 20, "s": 2, "t": "هل تعرف إجمالي مبيعاتك الآجلة مقارنة بالمبيعات النقدية؟"}, {"n": 21, "s": 3, "t": "كام إجمالي المبالغ المستحقة عليك للموردين حاليًا؟"}, {"n": 22, "s": 3, "t": "هل تعرف اشتريت بكام من كل مورد، ودفعت له كام، ولسه عليك كام؟"}, {"n": 23, "s": 3, "t": "هل تقدر تحدد المنتجات اللي محتاجة تعيد شراءها قبل ما تخلص؟"}, {"n": 24, "s": 4, "t": "كام المبلغ الموجود في الخزينة حاليًا؟ وهل مطابق للرصيد المسجل؟"}, {"n": 25, "s": 4, "t": "كام كان رصيد الخزينة امبارح؟"}, {"n": 26, "s": 4, "t": "كام إجمالي الفلوس اللي دخلت وخرجت من الخزينة خلال الشهر؟"}, {"n": 27, "s": 4, "t": "هل تقدر تحدد مصدر كل مبلغ دخل الخزينة وسبب كل مبلغ خرج منها؟"}, {"n": 28, "s": 4, "t": "كام إجمالي مصروفاتك الشهرية، وإيه أكتر أنواع المصروفات اللي بتستهلك فلوس المحل؟"}, {"n": 29, "s": 5, "t": "لو غبت عن المحل أسبوع، هل تقدر تتابع مبيعاته ومصروفاته ومخزونه وكل العمليات اللي بتحصل فيه؟"}, {"n": 30, "s": 5, "t": "هل تقدر تعرف مين من الموظفين نفذ كل عملية، وهل كل موظف عنده صلاحيات مناسبة لشغله؟"}, {"n": 31, "s": 5, "t": "هل تقدر تطلع تقرير شامل عن حالة محلك في أي وقت من غير ما تجمع أرقام من دفاتر وملفات مختلفة؟"}], "tiers": [{"r": "من 0% إلى 25%", "t": "محتاج تراجع حساباتك", "d": "فيه معلومات أساسية عن نشاطك مش واضحة ليك بالشكل الكافي، وده ممكن يصعّب عليك متابعة تجارتك واتخاذ قرارات دقيقة."}, {"r": "أكثر من 25% وحتى 50%", "t": "عندك صورة جزئية", "d": "أنت عارف بعض تفاصيل تجارتك، لكن لسه فيه جوانب مهمة محتاجة متابعة وتنظيم أفضل."}, {"r": "أكثر من 50% وحتى 75%", "t": "سيطرتك جيدة لكن محتاجة تطوير", "d": "عندك معرفة جيدة بنشاطك، لكن ممكن تحسّن دقة وسرعة الوصول للمعلومات وتقلل الاعتماد على الحسابات اليدوية."}, {"r": "أكثر من 75% وحتى 100%", "t": "سيطرتك قوية", "d": "عندك معرفة جيدة بتفاصيل نشاطك، والاستمرار في متابعة الأرقام وتحديثها هيساعدك تحافظ على المستوى ده وتطوره."}], "note": "النتيجة دي مؤشر مبدئي لمدى قدرتك على الوصول لمعلومات نشاطك، مش تقييم لنجاحك كتاجر أو حجم أرباحك.", "intro": "كل تاجر محتاج يعرف أرقام محله كويس، لكن هل أنت فعلًا عارف كل التفاصيل الخاصة بتجارتك؟ جاوب على الأسئلة الجاية، واكتشف بنفسك مدى سيطرتك على نشاطك التجاري.", "how": ["☐ نعم، أقدر أجاوب برقم دقيق = نقطة", "☐ لا، مش عارف أو إجابتي تقريبية = صفر", "نعم يعني عندك معلومة دقيقة ومحدثة، مش تخمين."], "axes": [{"title": "الأرباح والمكاسب", "range": "الأسئلة 1–7", "problem": "مش واضح ليك ربحك الحقيقي بعد المصروفات، ولا إيه المنتجات اللي بتكسّبك فعلًا.", "summary": "تقدر تتابع المبيعات وتكلفة البضاعة والمصروفات والأرباح، وتعرف المنتجات اللي بتحقق لك أعلى أرباح، والمنتجات اللي مبيعاتها كبيرة لكن هامش ربحها ضعيف.", "bullets": ["تقارير الأرباح والخسائر.", "تحليل مبيعات المنتجات وتكلفتها وأرباحها.", "حساب هامش الربح.", "معرفة متوسط وآخر أسعار الشراء والبيع.", "مقارنة أداء المنتجات.", "مقارنة النتائج بين الفترات الزمنية المختلفة.", "تقارير المصروفات."]}, {"title": "المخزون والبضاعة", "range": "الأسئلة 8–14", "problem": "مش عارف الكميات الفعلية وقيمة البضاعة، ولا إيه اللي قرب يخلص أو واقف.", "summary": "تقدر تعرف الكميات الموجودة وقيمة المخزون، وتحدد المنتجات اللي قربت تخلص والمنتجات الراكدة اللي مجمدة رأس مالك، وتاخد قرارات إعادة الشراء بناءً على بيانات فعلية.", "bullets": ["إدارة المنتجات والأقسام والباركود.", "متابعة الكميات المتاحة في المخزون.", "تحديث المخزون تلقائيًا مع البيع والشراء والمرتجعات.", "تحديد الحد الأدنى للمخزون.", "تنبيهات المنتجات القريبة من النفاد.", "تحليل المنتجات سريعة وبطيئة الحركة.", "معرفة قيمة المخزون الحالية.", "تحليل حركة كل منتج."]}, {"title": "العملاء والمديونيات والتحصيلات", "range": "الأسئلة 15–20", "problem": "مش عارف مين عليه فلوس، وكام، ومتأخر بقاله قد إيه.", "summary": "تقدر تعرف كل عميل عليه كام، وسدد كام، ولسه مستحق عليه كام، وتتابع المتأخرات والتحصيلات من غير ما تتوه بين الدفاتر والحسابات.", "bullets": ["إدارة حسابات العملاء.", "متابعة المديونيات والمبالغ المستحقة.", "تسجيل التحصيلات والمدفوعات.", "متابعة الفواتير المدفوعة وغير المدفوعة والمدفوعة جزئيًا.", "تسجيل المديونيات السابقة للعملاء.", "معرفة إجمالي مشتريات وسداد كل عميل.", "تحليل المبيعات النقدية والآجلة.", "متابعة المرتجعات وتأثيرها على مديونية العميل."]}, {"title": "الموردين والمشتريات", "range": "الأسئلة 21–23", "problem": "مش عارف عليك كام للموردين، ولا امتى تعيد الشراء.", "summary": "تقدر تعرف إجمالي مشترياتك من كل مورد، ودفعت له كام، ولسه عليك كام، وتحدد المنتجات اللي محتاجة تعيد شراءها قبل ما تخلص.", "bullets": ["إدارة بيانات الموردين.", "تسجيل فواتير المشتريات.", "متابعة المبالغ المستحقة للموردين.", "تسجيل المدفوعات.", "تسجيل المديونيات السابقة للموردين.", "تحليل المشتريات حسب المورد.", "متابعة الكميات ومستويات المخزون والحد الأدنى."]}, {"title": "الخزينة والأموال والمصروفات", "range": "الأسئلة 24–28", "problem": "مش عارف رصيد الخزينة بالظبط، ولا الفلوس دخلت وخرجت منين وليه.", "summary": "تقدر تعرف رصيد الخزينة، وكل مبلغ دخل أو خرج، ومصدره أو سبب صرفه، وتتابع مصروفات المحل وتعرف الفلوس بتروح فين.", "bullets": ["متابعة رصيد الخزينة الحالي.", "معرفة رصيد الخزينة خلال الفترات السابقة.", "تسجيل كل عمليات دخول وخروج الأموال.", "تسجيل الإيداعات ومصادرها.", "تسجيل المصروفات وتصنيفها.", "تقارير حركة الخزينة.", "تحليل المصروفات والإيداعات حسب الفترة الزمنية."]}, {"title": "الإدارة والسيطرة على المحل", "range": "الأسئلة 29–31", "problem": "مش قادر تتابع محلك ولا تعرف مين عمل إيه لو مش موجود.", "summary": "تقدر تتابع أداء محلك من مكان واحد، وتعرف إيه اللي بيحصل حتى لو مش موجود بنفسك، وتحدد صلاحيات الموظفين وتراجع العمليات اللي نفذوها، وتطلع تقارير تساعدك تاخد قرارات أفضل.", "bullets": ["لوحة تحكم شاملة Dashboard.", "متابعة المبيعات والمخزون والمصروفات والمديونيات.", "تقارير المستخدمين والموظفين.", "معرفة المستخدم اللي نفذ كل عملية.", "نظام صلاحيات للمدير والموظفين.", "تقارير شاملة حسب الفترة الزمنية.", "تصدير التقارير بصيغة PDF."]}], "cta": ["تجارتك تستاهل تكون تحت سيطرتك.", "Tager مش مجرد برنامج فواتير، ده نظام متكامل بيساعدك تدير مبيعاتك ومشترياتك ومخزونك وحساباتك وموظفينك وخزنتك من مكان واحد.", "جرّب Tager بنفسك وشوف إزاي ممكن يسهّل إدارة تجارتك."], "title": "هل أنت مسيطر على تجارتك فعلًا؟", "sub": "اختبر مدى معرفتك بأرباحك ومخزونك وحساباتك وإدارة محلك.", "s0": "بدل ما تجمع أرقامك من دفاتر وملفات مختلفة، Tager بيساعدك تتابع تفاصيل تجارتك من مكان واحد."};
+const app=document.getElementById('app'),N=T.q.length,COL=['#ef4444','#f59e0b','#3b82f6','#10b981'];
+let i=0,ans=[],busy=false;
+const TSFX=(()=>{
+  let ctx;
+  const get=()=>{try{ctx=ctx||new(window.AudioContext||window.webkitAudioContext)();if(ctx.state==='suspended')ctx.resume();return ctx}catch(e){return null}};
+  function tone(f,t0,d,type,v){
+    const c=get();if(!c)return;const o=c.createOscillator(),a=c.createGain(),t=c.currentTime+t0;
+    o.type=type||'sine';o.frequency.setValueAtTime(f,t);
+    a.gain.setValueAtTime(.0001,t);a.gain.exponentialRampToValueAtTime(v||.15,t+.02);a.gain.exponentialRampToValueAtTime(.0001,t+d);
+    o.connect(a);a.connect(c.destination);o.start(t);o.stop(t+d+.05);
+  }
+  const seq=(n,step,d,type,v)=>n.forEach((f,k)=>tone(f,k*step,d,type,v));
+  return{
+    open:()=>seq([523,784],.07,.18,'sine',.12),
+    close:()=>seq([784,523],.07,.16,'sine',.1),
+    yes:()=>seq([659,988],.07,.2,'triangle',.16),
+    no:()=>tone(220,0,.18,'sine',.1),
+    result:t=>{
+      if(t===0)seq([392,330,262],.2,.4,'sine',.14);
+      else if(t===1)seq([392,440,392],.18,.35,'triangle',.14);
+      else if(t===2)seq([523,659,784],.14,.35,'triangle',.16);
+      else{seq([523,659,784,1047],.12,.3,'triangle',.16);[1047,1319,1568].forEach(f=>tone(f,.52,.7,'sine',.1))}
+    }
+  };
+})();
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const tierOf=p=>p<=25?0:p<=50?1:p<=75?2:3;
+const axes=()=>T.sections.map((_,s)=>{const qs=T.q.filter(q=>q.s===s);return{n:qs.length,ok:qs.filter(q=>ans[q.n-1]===1).length}});
+const dlg=document.getElementById('dlg');let dlgDone=null;
+function confirmBox(){
+  return new Promise(res=>{
+    dlgDone=ok=>{dlg.classList.remove('open');document.body.style.overflow='';dlgDone=null;ok?0:TSFX.close();res(ok);if(lastFocus)lastFocus.focus()};
+    const lastFocus=document.activeElement;
+    dlg.classList.add('open');document.body.style.overflow='hidden';TSFX.open();
+    setTimeout(()=>document.getElementById('dlgNo').focus(),60);
+  });
+}
+document.getElementById('dlgOk').onclick=()=>dlgDone&&dlgDone(true);
+document.getElementById('dlgNo').onclick=()=>dlgDone&&dlgDone(false);
+dlg.addEventListener('click',e=>{if(e.target===dlg&&dlgDone)dlgDone(false)});
+function view(h,top){app.innerHTML=h;app.classList.remove('in');void app.offsetWidth;app.classList.add('in');if(top)window.scrollTo({top:0})}
+function intro(){
+  i=0;ans=[];
+  view(`<div class="hero"><i class="fa-solid fa-chart-line"></i></div>
+  <h1>${esc(T.title)}</h1><p class="sub">${esc(T.sub)}</p>
+  <div class="stats"><span><i class="fa-regular fa-clock"></i> حوالي 4 دقائق</span><span><i class="fa-solid fa-list-check"></i> ${N} سؤال</span><span><i class="fa-solid fa-layer-group"></i> ${T.sections.length} محاور</span></div>
+  <div class="box blue">${esc(T.intro)}</div>
+  <div class="box dash"><b>طريقة الإجابة</b><br>✅ ${esc(T.how[0].replace('☐ ',''))}<br>❌ ${esc(T.how[1].replace('☐ ',''))}<br><small>${esc(T.how[2])}</small></div>
+  <button class="btn" id="go"><i class="fa-solid fa-play"></i> ابدأ الاختبار</button>`,true);
+  document.getElementById('go').onclick=()=>{TSFX.open();ask()};
+}
+function ask(){
+  const q=T.q[i];busy=false;
+  view(`<div class="meta"><span>سؤال ${i+1} من ${N}</span><span class="chip">${esc(T.sections[q.s])}</span></div>
+  <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${N}" aria-valuenow="${i+1}"><i style="width:${i/N*100}%"></i></div>
+  <div class="q">${esc(q.t)}</div>
+  <div class="opts">
+    <button class="opt yes ${ans[i]===1?'sel':''}" data-v="1"><i class="fa-solid fa-circle-check"></i><b>نعم</b><small>أقدر أجاوب برقم دقيق</small></button>
+    <button class="opt no ${ans[i]===0?'sel':''}" data-v="0"><i class="fa-solid fa-circle-xmark"></i><b>لا</b><small>مش عارف أو إجابتي تقريبية</small></button>
+  </div>
+  <div class="foot">
+    <button class="prev" id="prev" ${i?'':'disabled'}><i class="fa-solid fa-arrow-right"></i> السابق</button>
+    <button class="prev restart" id="rs"><i class="fa-solid fa-rotate-right"></i> إعادة الاختبار</button>
+  </div>
+  <p class="hint">اختصار: اضغط 1 للإجابة بـ نعم، و2 للإجابة بـ لا</p>`);
+  requestAnimationFrame(()=>{const b=app.querySelector('.bar i');if(b)b.style.width=((i+1)/N*100)+'%'});
+  app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(+b.dataset.v,b));
+  document.getElementById('prev').onclick=()=>{if(i){i--;ask()}};
+  document.getElementById('rs').onclick=async()=>{
+    if(ans.length&&!(await confirmBox()))return;
+    TSFX.close();intro();
+  };
+}
+function pick(v,btn){
+  if(busy)return;busy=true;ans[i]=v;v?TSFX.yes():TSFX.no();
+  (btn||app.querySelector(v?'.yes':'.no')).classList.add('sel');
+  setTimeout(()=>{i++;i<N?ask():result()},230);
+}
+function result(){
+  const ax=axes(),sc=ans.filter(a=>a===1).length,p=sc/N*100,t=tierOf(p),c=COL[t],tr=T.tiers[t],C=2*Math.PI*54;
+  const bars=ax.map((a,s)=>`<div class="axis"><div><span>${esc(T.sections[s])}</span><span>${a.ok}/${a.n}</span></div><i><b data-w="${Math.round(a.ok/a.n*100)}" style="background:${COL[tierOf(a.ok/a.n*100)]}"></b></i></div>`).join('');
+  view(`<div class="gauge"><svg width="190" height="190" viewBox="0 0 120 120"><circle class="bg" cx="60" cy="60" r="54" fill="none" stroke-width="10"/><circle class="fg" cx="60" cy="60" r="54" fill="none" stroke="${c}" stroke-width="10" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C}"/></svg>
+    <div><strong style="color:${c}">${Math.round(p)}%</strong><span>${sc} / ${N}</span></div></div>
+  <div class="tier" style="background:${c}22;color:${c}">${esc(tr.t)}</div>
+  <div class="rng">${esc(tr.r)}</div>
+  <p class="desc">${esc(tr.d)}</p>
+  <div class="axes">${bars}</div>
+  <div class="note">${esc(T.note)}</div>
+  <div class="acts"><button class="btn green" id="sol">شوف إزاي Tager يحل ده <i class="fa-solid fa-arrow-left"></i></button><button class="btn ghost" id="re"><i class="fa-solid fa-rotate-right"></i> أعد الاختبار</button></div>`,true);
+  setTimeout(()=>{const f=app.querySelector('.fg');if(!f)return;f.style.strokeDashoffset=C*(1-p/100);app.querySelectorAll('.axis b').forEach(b=>b.style.width=b.dataset.w+'%')},80);
+  TSFX.result(t);document.getElementById('sol').onclick=()=>{TSFX.open();solutions()};document.getElementById('re').onclick=()=>{TSFX.close();intro()};
+}
+function solutions(){
+  const ax=axes();
+  const cards=T.axes.map((a,s)=>{const weak=ax[s].ok/ax[s].n<=.5;
+    return`<div class="sc ${weak?'weak':''}"><div class="sh"><h3>${esc(a.title)}</h3><span class="badge">${weak?'محتاج اهتمام':'نتيجتك فيه جيدة'} · ${ax[s].ok}/${ax[s].n}</span></div>
+    <div class="sr">${esc(a.range)}</div><p class="sp">${esc(a.problem)}</p>
+    <ul>${a.bullets.map(b=>`<li>${esc(b)}</li>`).join('')}</ul>
+    <div class="ss"><b>إزاي بيساعدك؟</b> ${esc(a.summary)}</div></div>`}).join('');
+  view(`<div class="sol"><h1 style="text-align:center;font-size:1.5rem">كل سؤال من دول ليه إجابة في Tager</h1>
+  <p class="lead">${esc(T.s0)}</p>${cards}
+  <div class="cta"><h3>${esc(T.cta[0])}</h3><p>${esc(T.cta[1])}</p><p><b>${esc(T.cta[2])}</b></p>
+    <div class="acts"><a class="btn white" href="https://fci-awso.github.io/Tager/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i> افتح الديمو المباشر</a></div></div>
+  <div class="acts"><button class="btn ghost" id="bk"><i class="fa-solid fa-arrow-right"></i> رجوع للنتيجة</button></div></div>`,true);
+  document.getElementById('bk').onclick=()=>{TSFX.close();result()};
+}
+document.addEventListener('keydown',e=>{
+  if(dlg.classList.contains('open')){
+    if(e.key==='Escape')dlgDone&&dlgDone(false);
+    else if(e.key==='Tab'){const b=[document.getElementById('dlgOk'),document.getElementById('dlgNo')],k=b.indexOf(document.activeElement);e.preventDefault();b[(k+(e.shiftKey?-1:1)+2)%2].focus()}
+    return;
+  }
+  if(!app.querySelector('.opt'))return;
+  if(e.key==='1'||e.key==='١')pick(1);else if(e.key==='2'||e.key==='٢')pick(0);
+});
+document.getElementById('yr').textContent=new Date().getFullYear();
+intro();
+</script>
+</body>
+</html>
