@@ -32,6 +32,7 @@
             --shadow-lift: 0 20px 40px rgba(0,0,0,.08);
             --radius: 20px;
             --ease: cubic-bezier(.22,.61,.36,1);
+            --card-w: 220px; /* عرض موحّد للكروت */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -154,7 +155,7 @@
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(3, 220px); /* 3 فوق و3 تحت بنفس الحجم القديم */
+            grid-template-columns: repeat(3, var(--card-w)); /* 3 فوق و3 تحت بنفس الحجم القديم */
             justify-content: center;
             gap: 1.5rem;
             align-items: stretch; /* لضمان تساوي ارتفاع البطاقات */
@@ -274,6 +275,50 @@
         .pharmacy .icon-wrap { background: #dcfce7; color: #16a34a; }
         .pharmacy .btn-demo { background: #dcfce7; color: #16a34a; }
         .pharmacy:hover .btn-demo { background: #16a34a; color: #fff; }
+
+        /* ==========================================================
+           كارت ديمو برنامج العبقري (معلّق في الهواء)
+           ========================================================== */
+        .demo-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* معلّق في الهواء: يبعد 50px عن اليسار و50px عن الأعلى */
+        .side-card {
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            z-index: 50;
+            width: var(--card-w);
+            height: auto;
+            justify-content: center;
+        }
+
+        .side-card .side-tag {
+            font-size: .75rem;
+            font-weight: 700;
+            padding: .2rem .7rem;
+            border-radius: 999px;
+            margin-bottom: .8rem;
+        }
+
+        .side-card h3 { min-height: 0; margin-bottom: .8rem; }
+
+        .side-card .side-note {
+            font-size: .85rem;
+            line-height: 1.7;
+            color: var(--ink-soft);
+            margin-bottom: 1.2rem;
+        }
+
+        .alabqary { --card-color: #64748b; }
+        .alabqary .icon-wrap { background: #f1f5f9; color: #64748b; }
+        .alabqary .side-tag { background: #f1f5f9; color: #475569; }
+        .alabqary .btn-demo { background: #f1f5f9; color: #475569; }
+        .alabqary:hover .btn-demo { background: #64748b; color: #fff; }
 
         .footer {
             margin-top: 3rem;
@@ -445,13 +490,19 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        @media (max-width: 1100px) {
+            .side-card { position: static; }
+        }
+
         @media (max-width: 900px) {
-            .cards-grid { grid-template-columns: repeat(2, 220px); }
+            .cards-grid { grid-template-columns: repeat(2, var(--card-w)); }
         }
 
         @media (max-width: 600px) {
             .header h1 { font-size: 1.6rem; }
             .cards-grid { grid-template-columns: 1fr; }
+            .demo-layout { align-items: stretch; }
+            .side-card { width: 100%; }
             .modal { border-radius: 16px; }
             .modal-header h2 { font-size: 1.1rem; }
             .feature-section h3 { font-size: .95rem; }
@@ -562,6 +613,7 @@
             </div>
         </header>
 
+        <div class="demo-layout">
         <div class="cards-grid" id="demoCards">
             <div class="demo-card supermarket" data-link="http://tagersupermarket.runasp.net/Admin/" style="animation-delay:.05s">
                 <div class="icon-wrap"><i class="fa-solid fa-basket-shopping"></i></div>
@@ -606,6 +658,18 @@
                 <div class="icon-wrap"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
                 <h3>صيدليات</h3>
                 <a href="http://tagerpharma.runasp.net/Admin/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+        </div>
+
+            <!-- كارت ديمو برنامج العبقري -->
+            <div class="demo-card alabqary side-card" data-link="http://alabqarycomputer.runasp.net/Admin/" style="animation-delay:.35s">
+                <span class="side-tag">نسخة مبسطة</span>
+                <div class="icon-wrap"><i class="fa-solid fa-calculator"></i></div>
+                <h3>برنامج العبقري</h3>
+                <p class="side-note">إمكانياته أقل ولا يشمل كل خصائص برنامج تاجر، مناسب لمن يبحث عن حل أبسط.</p>
+                <a href="http://alabqarycomputer.runasp.net/Admin/"
                    target="_blank" rel="noopener noreferrer"
                    class="btn-demo">استعراض الديمو <i class="fa-solid fa-arrow-left"></i></a>
             </div>
